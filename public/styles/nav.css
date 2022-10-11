@@ -1,0 +1,27 @@
+nav {
+  padding: 1.5em;
+  border-bottom: 3vm;;
+  color: #FFFFFF;
+  background-color: #4056A1;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* position: fixed;
+  top: 0; */
+}
+
+nav > span {
+  font-family: 'Bungee', cursive;
+  font-size: 40px;
+
+}
+ 
+.fa-solid, .fas {
+    font-weight: 900;
+}
+.fa-classic, .fa-regular, .fa-solid, .far, .fas {
+    font-family: "Font Awesome 6 Free";
+    display: flex;
+    justify-content: center;
+}
