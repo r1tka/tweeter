@@ -1,0 +1,38 @@
+.new-tweet {
+  background-color: f1efed;
+  width: 100%;
+  padding-bottom: 2em;
+  padding-top: 2em; 
+}
+ 
+.new-tweet div {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Bungee;
+  color: grey;
+} 
+
+label[for = "tweet-text"] {
+  color: grey;
+
+}
+button[type = 'submit'] {
+  color: white;
+  background-color: #4056A1;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  border: none;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea[name = 'text'] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid gray;
+}
+
+
