@@ -9,7 +9,6 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
 /*
  * Global layout stuff
  */
@@ -21,7 +20,14 @@ body {
   /* font-family: 'Bungee', cursive; should apply to the Tweeter logo in the nav */
   font-family: 'Source Sans Pro', sans-serif;
 } 
+ main {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
 
+  background-color: #f4f1ec;
+ }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
