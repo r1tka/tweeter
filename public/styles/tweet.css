@@ -1,0 +1,41 @@
+.tweet {
+  border: 0.6vw solid grey;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.tweet:hover {
+  color: gray;
+  box-shadow: 1vw 1vw grey;
+}
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.7em;
+}
+.avatar-container {
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  height: 4em;
+}
+.nickname {
+  color: lightgray;
+}
+.tweet-body {
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  border-bottom: 0.4vw solid grey;
+}
+.tweet-text {
+  margin: 1em;
+}
+ .tweet-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+ 
