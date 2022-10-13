@@ -28,32 +28,6 @@ const parseDate = function(time) {
   
 }
 
-
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 const createTweetElement = function(data) {
   return ( `<section class="tweet">
   <header class="tweet-header">
@@ -84,25 +58,28 @@ const renderTweets = function(tweets) {
     $(`.tweets-container`).append(createTweetElement(tweet))
   }}
 
+  const loadtweets = function() {
+    $.ajax({
+      type: 'GET',
+      url: "/tweets",
+    }).then((data) => {
+      renderTweets(data)
+      console.log('data', data)
+    }).catch((error) => {
+      console.log('error', error)
+    })
+  }
+
 $(document).ready(() => {
-  renderTweets(data)
   $( ".new-tweet-form" ).submit(function( event ) {
     event.preventDefault();
     const cleanData = $("#tweet-text").serialize()
-
       $.ajax({
       type: "POST",
       url: "/tweets",
       data: cleanData,
     });
-
-    const loadtweets = function() {
-      $.ajax({
-        type: 'GET',
-        url: "/tweets",
-      })
-    }
   })
- 
+  loadtweets()
 })
 
