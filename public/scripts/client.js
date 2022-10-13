@@ -17,7 +17,8 @@ const parseDate = function(time) {
   return `${sec} seconds ago`
 };
   
-}
+};
+/* render insecure text: */
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -54,21 +55,32 @@ const renderTweets = function(tweets) {
   }}
 
 $(document).ready(() => {
+
+  
   $( ".new-tweet-form" ).submit(function( event ) {
     event.preventDefault();
     const cleanData = $("#tweet-text").serialize()
-    if (cleanData.length > 145){
-      return alert("tweet content is too long")
+    if (cleanData.length > 145) {
+      $('.error').text(`❌ Tweet content is too long!`);
+      $('.error').css('border', '4px solid red');
+      $('.error').slideDown(1000);
     } else if (cleanData.length === 5) {
-      return alert("tweet can not be empty")
-    }
+      $('.error').text(`❌ Tweet can not be empty!`);
+      $('.error').css('border', '4px solid red');
+      $('.error').slideDown(1000);
+    } else {
+      $('.error').slideUp(1000);
       $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: cleanData,
-    })
-  loadtweets();
-});
+        type: 'POST',
+        url: "/tweets",
+        data: cleanData
+      })
+      .then(() => {
+        loadtweets();
+      });
+    }
+    
+    });
 });
 const loadtweets = function() {
   $.ajax({
