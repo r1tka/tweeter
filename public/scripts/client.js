@@ -1,13 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-//function that takes in a tweet object and is responsible for returning 
-//a tweet <article> element containing the entire HTML structure of the tweet.
-
-
-// Test / driver code (temporary). Eventually will get this from the server.
 const parseDate = function(time) {
   const timeDifference = Date.parse(new Date) - time
   const sec = timeDifference / 1000;
@@ -28,7 +18,11 @@ const parseDate = function(time) {
 };
   
 }
-
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 const createTweetElement = function(data) {
   return ( `<section class="tweet">
   <header class="tweet-header">
@@ -40,7 +34,7 @@ const createTweetElement = function(data) {
   </header>
   <div class="tweet-body">
     <p class="tweet-text">
-      ${data.content.text}
+      ${escape(data.content.text)}
     </p>
   </div>
   <footer class="tweet-footer">
@@ -56,26 +50,13 @@ const createTweetElement = function(data) {
  
 const renderTweets = function(tweets) {
   for(let tweet of tweets) {
-    $(`.tweets-container`).append(createTweetElement(tweet))
+    $(`.tweets-container`).prepend(createTweetElement(tweet))
   }}
-
-  const loadtweets = function() {
-    $.ajax({
-      type: 'GET',
-      url: "/tweets",
-    }).then((data) => {
-      renderTweets(data)
-      console.log('data', data)
-    }).catch((error) => {
-      console.log('error', error)
-    })
-  }
 
 $(document).ready(() => {
   $( ".new-tweet-form" ).submit(function( event ) {
     event.preventDefault();
     const cleanData = $("#tweet-text").serialize()
-    console.log(cleanData)
     if (cleanData.length > 145){
       return alert("tweet content is too long")
     } else if (cleanData.length === 5) {
@@ -85,8 +66,20 @@ $(document).ready(() => {
       type: "POST",
       url: "/tweets",
       data: cleanData,
-    });
+    })
+  loadtweets();
+});
+});
+const loadtweets = function() {
+  $.ajax({
+    type: 'GET',
+    url: "/tweets",
+  }).then((data) => {
+    renderTweets(data)
+    console.log('data', data)
+  }).catch((error) => {
+    console.log('error', error)
   })
-  loadtweets()
-})
+}
+
 
