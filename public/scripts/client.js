@@ -6,6 +6,7 @@
 //function that takes in a tweet object and is responsible for returning 
 //a tweet <article> element containing the entire HTML structure of the tweet.
 
+
 // Test / driver code (temporary). Eventually will get this from the server.
 const parseDate = function(time) {
   const timeDifference = Date.parse(new Date) - time
@@ -74,6 +75,12 @@ $(document).ready(() => {
   $( ".new-tweet-form" ).submit(function( event ) {
     event.preventDefault();
     const cleanData = $("#tweet-text").serialize()
+    console.log(cleanData)
+    if (cleanData.length > 145){
+      return alert("tweet content is too long")
+    } else if (cleanData.length === 5) {
+      return alert("tweet can not be empty")
+    }
       $.ajax({
       type: "POST",
       url: "/tweets",
