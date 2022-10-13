@@ -18,21 +18,4 @@ $(document).ready(function() {
   });
 });
 
-// $(document).ready(function() {
-//   console.log(this)
-//   const maxLength = 140; //max value 
-//   let num = maxLength;
 
-// $("#tweet-text").on( "keydown", function( event ) {
-//     // const val = $( "#tweet-text" ).val();
-//     const tweetLength = $('tweet-text').val().length
-//     num = maxLength - tweetLength;
-//     if(num < 0) {
-//       $(this).siblings('div').children('output').val(num).css('color', 'red')
-//     } else {
-//       /* assign counter with num */
-//       $(this).siblings('div').children('output').val(num).css('color', 'grey')
-//     }
-// });
-
-// });
