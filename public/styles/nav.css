@@ -33,3 +33,19 @@ nav > span {
     display: flex;
     justify-content: center;
 }
+
+
+
+@media only screen 
+and (min-width: 764px) 
+and (max-width: 1024px) {
+  nav {
+    background-color: #0095e0;
+    background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+    position: relative;
+    font-size: x-large;
+  }
+  .create-tweet {
+    background-color: #00cde0;
+  }
+}

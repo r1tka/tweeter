@@ -32,6 +32,16 @@ body {
  .tweets-container {
   width: 100%;
  }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+ 
+
+@media only screen 
+and (min-width: 764px) 
+and (max-width: 1024px) {
+  body {
+    display: inline; 
+    font-size: medium;
+  }
+  .container {
+    display: block;
+  }
+}
