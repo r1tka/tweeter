@@ -1,8 +1,8 @@
 nav {
   padding: 1.5em;
-  border-bottom: 3vm;;
-  color: #FFFFFF;
-  background-color: #4056A1;
+  border-bottom: 3vm;
+  color: #ffffff;
+  background-color: #4056a1;
   height: 120px;
   display: flex;
   align-items: center;
@@ -10,35 +10,35 @@ nav {
 }
 
 nav > span {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   font-size: 40px;
-  
 }
 .span {
   margin-top: 1.4em;
 }
 
 .new-tweet-button {
-  display:flex;
+  display: flex;
   flex-direction: column;
   margin-top: 1.4em;
 }
- 
-.fa-solid, .fas {
-    font-weight: 900;
+
+.fa-solid,
+.fas {
+  font-weight: 900;
 }
-.fa-classic, .fa-regular, .fa-solid, .far, .fas {
-    color: red;
-    font-family: "Font Awesome 6 Free";
-    display: flex;
-    justify-content: center;
+.fa-classic,
+.fa-regular,
+.fa-solid,
+.far,
+.fas {
+  color: red;
+  font-family: "Font Awesome 6 Free";
+  display: flex;
+  justify-content: center;
 }
 
-
-
-@media only screen 
-and (min-width: 764px) 
-and (max-width: 1024px) {
+@media only screen and (min-width: 764px) and (max-width: 1024px) {
   nav {
     background-color: #0095e0;
     background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
