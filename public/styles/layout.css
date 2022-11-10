@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 /*
@@ -18,9 +20,9 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   /* font-family: 'Bungee', cursive; should apply to the Tweeter logo in the nav */
-  font-family: 'Source Sans Pro', sans-serif;
-} 
- main {
+  font-family: "Source Sans Pro", sans-serif;
+}
+main {
   display: flex;
   flex-direction: column;
   margin-left: 5%;
@@ -28,20 +30,24 @@ body {
   align-items: center;
 
   background-color: #f4f1ec;
- }
- .tweets-container {
+}
+.tweets-container {
   width: 100%;
- }
- 
+}
 
-@media only screen 
-and (min-width: 764px) 
-and (max-width: 1024px) {
+@media only screen and (min-width: 764px) {
   body {
-    display: inline; 
+    display: flex;
     font-size: medium;
   }
-  .container {
-    display: block;
+  main {
+    margin-top: 7em;
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 764px) and (max-width: 1024px) {
+  body {
+    font-size: medium;
   }
 }
