@@ -27,6 +27,7 @@ button[type = 'submit'] {
 form {
   display: flex;
   flex-direction: column;
+  display: none;
 }
 
 textarea[name = 'text'] {

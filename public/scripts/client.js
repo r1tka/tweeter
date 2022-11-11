@@ -19,7 +19,7 @@ const createTweetElement = function (data) {
       ${escape(data.content.text)}
     </p>
   </div>
-  <footer class="tweet-footer">
+  <footer class="tweet-footer">       
     <p class="tweet-date">${ago}</p>
     <div class="tweet-icon-buttons">
       <i class="fa-thin fa-flag"></i>
@@ -31,15 +31,20 @@ const createTweetElement = function (data) {
 };
 
 const renderTweets = function (tweets) {
+  $( '.tweets-container' ).empty();
   for (let tweet of tweets) {
     $(`.tweets-container`).prepend(createTweetElement(tweet));
   }
 };
 
 $(document).ready(() => {
+  $(".create-tweet").click(function () {
+    $(".new-tweet-form").toggle();
+  });
   $(".new-tweet-form").submit(function (event) {
     event.preventDefault();
     const cleanData = $("#tweet-text").serialize();
+    //---------handle errors---------
     if (cleanData.length > 145) {
       $(".error").text(`❗️ Tweet content is too long!❗️`);
       $(".error").css("border", "4px solid red");
@@ -73,3 +78,4 @@ const loadtweets = function () {
       console.log("error", error);
     });
 };
+
