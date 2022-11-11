@@ -5,29 +5,29 @@ const escape = function (str) {
   return div.innerHTML;
 };
 const createTweetElement = function (data) {
-  const ago = timeago.format(data.created_at);
-  return `<section class="tweet">
+  const ago = timeago.format(data.created_at); 
+  return `
+<section class="tweet">
   <header class="tweet-header">
     <div class="avatar-container">
-      <img class='avatar' src=${data.user.avatars}>
+      <img class="avatar" src=${data.user.avatars}/>
       <h3 class="username">${data.user.name}</h3>
     </div>
     <h3 class="nickname">${data.user.handle}</h3>
   </header>
   <div class="tweet-body">
-    <p class="tweet-text">
-      ${escape(data.content.text)}
-    </p>
+    <p class="tweet-text">${escape(data.content.text)}</p>
   </div>
-  <footer class="tweet-footer">       
+  <footer class="tweet-footer">
     <p class="tweet-date">${ago}</p>
     <div class="tweet-icon-buttons">
-      <i class="fa-thin fa-flag"></i>
-      <i class="fa-thin fa-retweet"></i>
-      <i class="fa-thin fa-heart"></i>
+      <i class="fa-solid fa-flag"></i>
+      <i class="fa-solid fa-code-compare"></i>
+      <i class="fa-solid fa-heart"></i>
     </div>
-  </footer>      
-</section>`;
+  </footer>
+</section>
+`
 };
 
 const renderTweets = function (tweets) {
@@ -38,6 +38,7 @@ const renderTweets = function (tweets) {
 };
 
 $(document).ready(() => {
+  loadtweets();
   $(".create-tweet").click(function () {
     $(".new-tweet-form").toggle();
   });

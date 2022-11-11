@@ -23,26 +23,15 @@ nav > span {
   margin-top: 1.4em;
 }
 
-.fa-solid,
-.fas {
-  font-weight: 900;
-}
-.fa-classic,
-.fa-regular,
-.fa-solid,
-.far,
-.fas {
-  color: red;
-  font-family: "Font Awesome 6 Free";
-  display: flex;
-  justify-content: center;
-}
 
 @media only screen and (min-width: 764px) {
   nav {
     position: fixed;
     width: 100%;
   }
+}
+.arrow {
+  color: red;
 }
 
 @media only screen and (min-width: 764px) and (max-width: 1024px) {

@@ -38,4 +38,15 @@
   margin-left: 1em;
   margin-right: 1em;
 }
- 
+.tweet-icon-buttons {
+  color: rgb(96, 8, 70);
+}
+.fa-flag:hover {
+  color: rgb(200, 178, 178);
+}
+.fa-code-compare:hover {
+  color: gray;
+}
+.fa-heart:hover {
+  color: gray;
+}
