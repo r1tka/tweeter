@@ -12,7 +12,7 @@
 
 @media only screen and (min-width: 764px) {
   .main-header {
-    height: auto;
+    height: 35vw;
     width: 30%;
     margin-top: 10em;
     margin-left: 3em;
