@@ -66,6 +66,7 @@ $(document).ready(() => {
     }
   });
 });
+//--------loading new tweets-----
 const loadtweets = function () {
   $.ajax({
     type: "GET",
