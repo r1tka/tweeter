@@ -16,3 +16,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshot Section
+!["Error"]https://github.com/r1tka/tweeter/blob/master/docks/error.png?raw=true
+!["HomePage"]https://github.com/r1tka/tweeter/blob/master/docks/homepage.png?raw=true
+!["HomePage2"]https://github.com/r1tka/tweeter/blob/master/docks/homepage2.png?raw=true
+!["Tweets"]https://github.com/r1tka/tweeter/blob/master/docks/tweets.png?raw=true
