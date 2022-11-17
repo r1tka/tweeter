@@ -61,6 +61,7 @@ $(document).ready(() => {
         url: "/tweets",
         data: cleanData,
       }).then(() => {
+        $("#tweet-text").val("")
         loadtweets();
       });
     }
